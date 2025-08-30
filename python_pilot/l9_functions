@@ -1,0 +1,62 @@
+# Functions - re-usable bits of code that perform a specific function
+
+
+# Defining the function, naming
+# Only lower case and underscore while naming
+def hello():
+    print("Wake up Neo")
+
+
+# above the function is defined only. it has to be called to run
+hello()  # caling a function
+
+# parameters place holders for data in functions like variables
+# Access exists only within the functions scope
+
+
+def sum(num1, num2):
+    print(num1 + num2)
+
+
+# Calling the func adding arguments i.e Actual values/ data
+# Parameters never change but Argmnts can change with every call
+sum(5, 10)
+
+
+# return statement sends a result/value back from the function for further use
+# if no return statement is used or if used without a value,
+# the function returns None by default.
+
+
+def sums(s1=0, s2=0):  # default perimeter values
+    # if s1 is not int or s2:
+    if type(s1) is not int or type(s2) is not int:
+        return 0  # default return value
+    return s1 + s2  # No parenthesis
+
+
+result = sums("k", 9)
+print(result)
+
+
+# The * is required only to specify that multiple positional arguments can be passed and collected
+# arg is used to allow function to accept a variable number of positional arguments.
+
+
+def mult_named(*args):
+    print(args)
+    print(type(args))
+
+
+mult_named("Neo", "Last", "omega")  # type = tuple
+
+# **kwargs collects keyword arguments into a dictionary inside the function
+# handle named arguments
+
+
+def mult_named_items(**kwargs):
+    print(kwargs)
+    print(type(kwargs))
+
+
+mult_named_items(first="Neo", Last="omega")  # type = dictionary
